@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+body {
+    background-color:#DDF5D0;
+    
+}
+.navbar {
+    border-bottom: 1px solid rgb(195, 236, 229);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.navbar .fas {
+    color:rgb(82, 160, 147);
+    
+}
+.btn-primary {
+    background-color: rgb(82, 160, 147);
+}
+
+.style-content-top {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+}
+
+.style-content-bottom {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+}
+
+#head-section {
+    border-bottom: 2px dashed  rgb(82, 160, 147);
+}
+
+#head-section h4{
+    color: rgb(42, 112, 100);
+}
+
+#aboutme-section .fas {
+    color:rgb(82, 160, 147);
+    
+}
+#aboutme-section {
+    border-bottom: 2px dashed  rgb(82, 160, 147);
+}
+
+#work h3{
+    color: rgb(42, 112, 100);
+}
+
+@media only screen and (max-width: 600px) {
+    .style-content-bottom {
+        padding-left: 4rem;
+    
+    }
+    .card-control{
+        padding-left: 7rem;
+        padding-bottom: 1rem;
+
+    }
+  }
