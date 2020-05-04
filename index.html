@@ -10,15 +10,15 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
-  <title>Prasanna Tuladhar | Portfolio </title>
+  <link rel = "icon" type = "image/png" href = "img/favicon-16x16.png"> <title>Prasanna Tuladhar | Portfolio </title>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#main-nav" id="home"> 
   <!-- START HERE -->
 <div >
-  <nav class="navbar navbar-expand-lg rounded-top navbar-light bg-light">
-    <a class="navbar-brand ml-5" href="#">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4c777e59911031.5a33b1720ea70.jpg" width="50" height="50" alt="">
+  <nav class="navbar navbar-expand-lg rounded-top navbar-light bg-light" id="main-nav">
+    <a class="navbar-brand ml-5" href="#home">
+      <img src="img/logo1.jpg" width="50" height="50" alt="">
     </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -27,20 +27,18 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mx-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">ABOUT</a>
+        <a class="nav-link" href="#aboutme-section">ABOUT</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">PROJECTS</a>
+        <a class="nav-link" href="#work">PROJECTS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">CONTACT</a>
+        <a class="nav-link" href="#contact">CONTACT</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">BLOG</a>
-      </li>
+      
     </ul>
   
-    <a href="#" >
+    <a href="mailto:prasanna.pmt@gmail.com" >
       <i class="fas fa-envelope fa-2x"></i>
     </a>
     
@@ -49,7 +47,7 @@
 </div>
 <!-- HOME SECTION -->
 <header id="head-section">
-  <div class="row">
+  <div class="row" id="home">
       <div class="col-md-6 style-content-top">
         <div class=" justify-content-center pl-5">
           <h4>
@@ -62,8 +60,8 @@
           <p class="lead">I'm a web / Mobile App developer based in Kathmandu, Nepal.
              I have a passion for learning and building technology that can change the life.</p>
              
-             <button class="btn btn-primary"><i class="fas fa-arrow-right"></i>
-               Learn More</button>
+             <a href="#work">  <button class="btn btn-primary"><i class="fas fa-arrow-right"></i>
+               Learn More</button></a>
         </div>
       </div>
       <div class="col-md-6 d-none d-md-block style-content-top">
@@ -129,7 +127,7 @@
             <div class="card" style="width: 18rem;">
               <img src="img/wdd.jpg" class="card-img-top" alt="...">
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">Simple mock up design and overall website design</p>
               </div>
             </div>
           </div>
@@ -137,7 +135,7 @@
             <div class="card" style="width: 18rem;">
               <img src="img/wd.jpg" class="card-img-top" alt="...">
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">Dynamic Web development with Authentication and Authorization</p>
               </div>
             </div>
           </div>
@@ -145,7 +143,7 @@
             <div class="card" style="width: 18rem;">
               <img src="img/ws.jpg" class="card-img-top" alt="...">
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">For basic web scraping using python selenium</p>
               </div>
             </div>
           </div>
@@ -153,7 +151,7 @@
             <div class="card" style="width: 18rem;">
               <img src="img/mad.jpg" class="card-img-top" alt="...">
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">Cross platform mobile app development for IOS and Android</p>
               </div>
             </div>
           </div>
@@ -163,6 +161,13 @@
   
 
 </section>
+<footer id="contact">
+  <div class="mt-2 text-center ">
+    <img src="img/fme.jpg" class="img-fluid">
+    <a href="https://twitter.com/pr_tuladhar"><img src="img/twitter.png" class="img_footer" height="30"> </a>
+    <a href="https://github.com/prasannatuladhar"><img src="img/git.png" class="img_footer" height="27"> </a>
+   </div>
+</footer>
 
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -173,8 +178,24 @@
     crossorigin="anonymous"></script>
 
   <script>
-    // Get the current year for the copyright
-    $('#year').text(new Date().getFullYear());
+    // Init Scrollspy
+    $('body').scrollspy({ target:'#main-nav' });
+    //Smooth Scrolling
+    $("#main-nav a").on('click', function (event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+
+        const hash = this.hash;
+
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function () {
+
+          window.location.hash = hash;
+        });
+      }
+    });
+
   </script>
 </body>
 
