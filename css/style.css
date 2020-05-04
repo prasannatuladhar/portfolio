@@ -61,8 +61,19 @@ body {
     
     }
     .card-control{
-        padding-left: 7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center ;
         padding-bottom: 1rem;
 
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    #aboutme-section .style-content-bottom{
+        padding-left: 5rem;
+    }
+   
+  }
+
+  
